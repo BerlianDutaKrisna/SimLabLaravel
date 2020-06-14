@@ -39,7 +39,7 @@ class Pasien extends Controller
         DB::table('patients')->insert(
             [
                 'no_rm' =>$request->no_rm,
-                'nama' =>$request->nama,
+                'nama_pasien' =>$request->nama_pasien,
                 'gender' =>$request->gender,
                 'usia' =>$request->usia,
                 'tanggal_lahir' =>$request->tanggal_lahir,
@@ -48,9 +48,9 @@ class Pasien extends Controller
             return redirect('pasien')->with('status', 'Data Pasien Berhasil Ditambahkan!');
     }
 
-    public function editview($id)
+    public function editview($no_rm)
     {
-        $data = DB::table('patients')->where('id', $id)->first();
+        $data = DB::table('patients')->where('no_rm', $no_rm)->first();
         return view('pasien/edit_pasien',compact('data'));
     }
 
@@ -84,13 +84,13 @@ class Pasien extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Request $request, $id)
+    public function edit(Request $request, $no_rm)
     {
         $affected = DB::table('patients')
-                ->where('id', $id)
+                ->where('no_rm', $no_rm)
                 ->update([
-                    'no_rm' =>$request->no_rm,
-                'nama' =>$request->nama,
+                'no_rm' =>$request->no_rm,
+                'nama_pasien' =>$request->nama_pasien,
                 'gender' =>$request->gender,
                 'usia' =>$request->usia,
                 'tanggal_lahir' =>$request->tanggal_lahir,
@@ -99,9 +99,9 @@ class Pasien extends Controller
         return redirect('pasien')->with('status', 'Data Pasien Berhasil Diedit!');
     }
 
-    public function delete($id)
+    public function delete($no_rm)
     {
-        DB::table('patients')->where('id', $id)->delete();
+        DB::table('patients')->where('no_rm', $no_rm)->delete();
         return redirect('pasien')->with('status', 'Data Pasien Berhasil Dihapus!');
     }
 

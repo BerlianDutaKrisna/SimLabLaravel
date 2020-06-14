@@ -1,4 +1,4 @@
-@extends('dashboard')
+@extends('main')
 
 @section('title')
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
@@ -16,7 +16,7 @@
         </div>
     </div>
     <div class="card-body">
-        <form action="{{url('pasien/edit/'.$data->id)}}" method="post">
+        <form action="{{url('pasien/edit/'.$data->no_rm)}}" method="post">
         @method('GET')
         @csrf
             <div class="form-group row">
@@ -28,7 +28,7 @@
             <div class="form-group row">
                 <label for="inputName" class="col-sm-2 col-form-label">Nama</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputName" name="nama" value="{{$data->nama}}">
+                    <input type="text" class="form-control" id="inputName" name="nama_pasien" value="{{$data->nama_pasien}}">
                 </div>
             </div>
             <div class="form-row">

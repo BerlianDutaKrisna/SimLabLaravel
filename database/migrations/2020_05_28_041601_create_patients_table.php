@@ -16,7 +16,7 @@ class CreatePatientsTable extends Migration
         Schema::create('patients', function (Blueprint $table) {
             $table->id('id_patients');
             $table->char('no_rm', 6)->unique();
-            $table->string('nama');
+            $table->string('nama_pasien');
             $table->enum('gender', ['Laki-laki', 'Perempuan'])->nullable();	
             $table->integer('usia')->nullable();
             $table->date('tanggal_lahir')->nullable();

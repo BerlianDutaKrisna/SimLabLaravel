@@ -15,10 +15,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/','login@index');
 
+Route::get('dasboard','Dasboard@index');
+
+Route::get('pemeriksaan','Examination@index');
+
 Route::get('pasien','Pasien@index');
 Route::get('pasien/addview','Pasien@addview');
 Route::post('pasien/add','Pasien@add');
-Route::get('pasien/editview/{id}','Pasien@editview');
-Route::get('pasien/edit/{id}','Pasien@edit');
-Route::get('pasien/delete/{id}','Pasien@delete');
+Route::get('pasien/editview/{no_rm}','Pasien@editview');
+Route::get('pasien/edit/{no_rm}','Pasien@edit');
+Route::get('pasien/delete/{no_rm}','Pasien@delete');
 
