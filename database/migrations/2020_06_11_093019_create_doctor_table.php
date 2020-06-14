@@ -14,8 +14,10 @@ class CreateDoctorTable extends Migration
     public function up()
     {
         Schema::create('doctor', function (Blueprint $table) {
-            $table->id('id_dokter');
+            $table->id('id_doctor');
             $table->string('nama_dokter');
+
+            $table->timestamps();
         });
     }
 

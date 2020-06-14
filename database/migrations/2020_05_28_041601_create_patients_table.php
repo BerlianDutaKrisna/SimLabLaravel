@@ -14,13 +14,15 @@ class CreatePatientsTable extends Migration
     public function up()
     {
         Schema::create('patients', function (Blueprint $table) {
-            $table->id('id_patients');
-            $table->char('no_rm', 6)->unique();
+            $table->uuid('no_rm');
             $table->string('nama_pasien');
             $table->enum('gender', ['Laki-laki', 'Perempuan'])->nullable();	
             $table->integer('usia')->nullable();
             $table->date('tanggal_lahir')->nullable();
-            $table->enum('ruangan', ['IGD', 'Melati', 'Graha 2', 'Graha 3'])->nullable();	
+            $table->timestamps();
+
+            $table->primary('no_rm');
+
         });
     }
 

@@ -44,6 +44,14 @@ class CreateHematologyResultsTable extends Migration
             $table->string('LIC%', 100)->nullable();
             $table->string('ALY#', 100)->nullable();
             $table->string('LIC#', 100)->nullable();
+
+            $table->timestamps();
+
+            $table->char('no_rm', 6);
+
+            $table->foreign('no_rm')
+                ->references('no_rm')
+                ->on('patients');
         });
     }
 

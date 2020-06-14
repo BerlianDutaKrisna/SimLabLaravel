@@ -14,7 +14,7 @@ class CreateClinicalResultsTable extends Migration
     public function up()
     {
         Schema::create('clinical_results', function (Blueprint $table) {
-            $table->id('id_clinical_result');
+            $table->id('id_clinical_results');
             $table->string('GDP', 100)->nullable();
             $table->string('GD2PP', 100)->nullable();
             $table->string('GDA', 100)->nullable();
@@ -32,7 +32,13 @@ class CreateClinicalResultsTable extends Migration
             $table->string('TCa', 100)->nullable();
             $table->string('pH', 100)->nullable();
 
-            
+            $table->timestamps();
+
+            $table->char('no_rm', 6);
+
+            $table->foreign('no_rm')
+                ->references('no_rm')
+                ->on('patients');            
         });
     }
 
