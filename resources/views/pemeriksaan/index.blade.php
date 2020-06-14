@@ -17,7 +17,7 @@
 @endif
     <div class="card-header">
         <div class="text-left">
-        <a class="btn btn-success" href="{{url('pasien/addview')}}">Tambah</a>
+        <a class="btn btn-success" href="{{url('pemeriksaan/addview')}}">Tambah</a>
         </div>
     </div>
     <div class="card-body">

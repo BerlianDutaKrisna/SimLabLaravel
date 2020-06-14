@@ -49,16 +49,7 @@
                     <input type="text" class="form-control" id="inputBirth" name="tanggal_lahir" value="{{$data->tanggal_lahir}}">
                 </div>
             </div>
-            <div class="form-group">
-                <label for="inputRuangan">Ruagan</label>
-                <select id="inputRuangan" class="form-control" name="ruangan">
-                    <option selected disabled value="{{$data->ruangan}}">{{$data->ruangan}}</option>
-                    <option value="IGD">IGD</option>
-                    <option value="Melati">Melati</option>
-                    <option value="Graha 2">Graha 2</option>
-                    <option value="Graha 3">Graha 3</option>
-                </select>
-            </div>
+            
             <button type="submit" class="btn btn-primary">Edit Data</button>
         </form>
     </div>

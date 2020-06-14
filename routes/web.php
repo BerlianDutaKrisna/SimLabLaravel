@@ -18,6 +18,7 @@ Route::get('/','login@index');
 Route::get('dasboard','Dasboard@index');
 
 Route::get('pemeriksaan','Examination@index');
+Route::get('pemeriksaan','Examination@addview');
 
 Route::get('pasien','Pasien@index');
 Route::get('pasien/addview','Pasien@addview');

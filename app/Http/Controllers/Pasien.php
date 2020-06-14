@@ -42,8 +42,7 @@ class Pasien extends Controller
                 'nama_pasien' =>$request->nama_pasien,
                 'gender' =>$request->gender,
                 'usia' =>$request->usia,
-                'tanggal_lahir' =>$request->tanggal_lahir,
-                'ruangan' =>$request->ruangan
+                'tanggal_lahir' =>$request->tanggal_lahir
             ]);
             return redirect('pasien')->with('status', 'Data Pasien Berhasil Ditambahkan!');
     }
@@ -93,8 +92,7 @@ class Pasien extends Controller
                 'nama_pasien' =>$request->nama_pasien,
                 'gender' =>$request->gender,
                 'usia' =>$request->usia,
-                'tanggal_lahir' =>$request->tanggal_lahir,
-                'ruangan' =>$request->ruangan
+                'tanggal_lahir' =>$request->tanggal_lahir
                     ]);
         return redirect('pasien')->with('status', 'Data Pasien Berhasil Diedit!');
     }
