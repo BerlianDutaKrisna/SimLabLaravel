@@ -17,7 +17,7 @@
 @endif
     <div class="card-header">
         <div class="text-left">
-        <a class="btn btn-success" href="{{url('pasien/create')}}">Tambah</a>
+        <a class="btn btn-success" href="{{url('pasien/addview')}}">Tambah</a>
         </div>
     </div>
     <div class="card-body">
@@ -41,6 +41,8 @@
                         <td>{{$row->gender}}</td>
                         <td>
                             <a href="" class="btn btn-primary btn-sm">Detail</i></a>
+                            <a href="{{url('pasien/editview/'.$row->id)}}" class="btn btn-warning btn-sm">Edit</i></a>
+                            <a href="{{url('pasien/delete/'.$row->id)}}" class="btn btn-danger btn-sm">Delete</i></a>
                         </td>
                     </tr>
                     @endforeach

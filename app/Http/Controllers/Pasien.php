@@ -26,6 +26,11 @@ class Pasien extends Controller
      */
     public function create()
     {
+        
+    }
+
+    public function addview()
+    {
         return view('pasien/tambah_pasien');
     }
 
@@ -41,6 +46,12 @@ class Pasien extends Controller
                 'ruangan' =>$request->ruangan
             ]);
             return redirect('pasien')->with('status', 'Data Pasien Berhasil Ditambahkan!');
+    }
+
+    public function editview($id)
+    {
+        $data = DB::table('patients')->where('id', $id)->first();
+        return view('pasien/edit_pasien',compact('data'));
     }
 
     
@@ -73,9 +84,25 @@ class Pasien extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request, $id)
     {
-        //
+        $affected = DB::table('patients')
+                ->where('id', $id)
+                ->update([
+                    'no_rm' =>$request->no_rm,
+                'nama' =>$request->nama,
+                'gender' =>$request->gender,
+                'usia' =>$request->usia,
+                'tanggal_lahir' =>$request->tanggal_lahir,
+                'ruangan' =>$request->ruangan
+                    ]);
+        return redirect('pasien')->with('status', 'Data Pasien Berhasil Diedit!');
+    }
+
+    public function delete($id)
+    {
+        DB::table('patients')->where('id', $id)->delete();
+        return redirect('pasien')->with('status', 'Data Pasien Berhasil Dihapus!');
     }
 
     /**

@@ -13,7 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/','Dashboard@index');
+Route::get('/','login@index');
+
 Route::get('pasien','Pasien@index');
-Route::get('pasien/create','Pasien@create');
+Route::get('pasien/addview','Pasien@addview');
 Route::post('pasien/add','Pasien@add');
+Route::get('pasien/editview/{id}','Pasien@editview');
+Route::get('pasien/edit/{id}','Pasien@edit');
+Route::get('pasien/delete/{id}','Pasien@delete');
+
